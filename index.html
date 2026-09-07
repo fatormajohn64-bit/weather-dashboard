@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>🌤️ Weather Dashboard</h1>
+            <div class="header-controls">
+                <button id="geoBtn" class="geo-btn" title="Use my location">📍 My Location</button>
+                <div class="unit-toggle">
+                    <button class="unit-btn active" data-unit="C">°C</button>
+                    <button class="unit-btn" data-unit="F">°F</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search for a city..." 
+                    class="search-input"
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">🔍 Search</button>
+            </div>
+            <div id="suggestions" class="suggestions-dropdown"></div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Current Weather -->
+            <section class="current-weather" id="currentWeather">
+                <div class="loading">Loading weather data...</div>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="quick-stats" id="quickStats"></section>
+
+            <!-- Hourly Forecast -->
+            <section class="hourly-forecast">
+                <h2>Hourly Forecast</h2>
+                <div class="hourly-scroll" id="hourlyForecast">
+                    <div class="loading">Loading hourly forecast...</div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast -->
+            <section class="forecast-section">
+                <h2>5-Day Forecast</h2>
+                <div class="forecast-grid" id="forecastGrid">
+                    <div class="loading">Loading forecast...</div>
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section class="favorites-section">
+                <h2>Favorite Cities</h2>
+                <div id="favoritesList" class="favorites-list">
+                    <p class="no-favorites">No favorite cities yet. Add one!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Weather data powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+        <p>&copy; 2024 Weather Dashboard. All rights reserved.</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
